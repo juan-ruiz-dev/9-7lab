@@ -28,29 +28,14 @@ module.exports = {
         let index = house.findIndex(elem => elem.id === +req.params.id)
         if(type === 'minus'){
             house[index].price -= 10000
-            res.status(200).send(movies)
+            res.status(200).send(house)
         }else if (type === 'plus'){
             house[index].price += 10000
             res.status(200).send(house)
         } else {
-            res.status(400).send('Invalid star rating')
+            res.status(400).send('invalid price')
         }
     }
 
 }
 
-    // updateHouse: (req, res) => {
-    //     // console.log(req.params.id)
-    //     // console.log(req.body)
-    //     const {type} = req.body;
-    //     let index = movies.findIndex(elem => elem.id === +req.params.id)
-    //     if(type === 'minus' && movies[index].rating > 0){
-    //         movies[index].rating -= 1
-    //         res.status(200).send(movies)
-    //     }else if (type === 'plus' && movies[index].rating < 5){
-    //         movies[index].rating += 1
-    //         res.status(200).send(movies)
-    //     } else {
-    //         res.status(400).send('Invalid star rating')
-    //     }
-    // }
